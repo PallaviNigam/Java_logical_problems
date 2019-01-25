@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class HelloWorld
+{
+public static void main(String args[])
+{
+System.out.println("Enter your String");
+Scanner sc = new Scanner(System.in);
+String st = sc.nextLine();
+int i;
+int ascii;
+char[] array = new char[26]; 
+char temp;
+char  initial = ' ';
+
+
+for( i = 0; i<st.length(); i++)
+{
+temp = st.charAt(i);
+ascii = (int) temp;
+ascii = ascii - 97;
+//System.out.println(ascii);
+if (array[ascii]== 0)
+{
+
+array[ascii] = temp;
+}
+else
+{
+System.out.println(temp);
+break;
+}
+
+}
+}}
