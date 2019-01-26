@@ -1,0 +1,55 @@
+import java.util.Scanner;
+import java.lang.*;
+public class HelloWorld
+{
+public static void main(String args[])
+{
+  int[][] a = new int[1000][1000];
+  int n,m;
+  int i,j;
+  
+  Scanner sc = new Scanner(System.in);
+  n = sc.nextInt();
+  m = sc.nextInt();
+  //no of  rows
+  for (i = 0; i<n; i++)
+  {
+      //no of column
+      for(j=0;j<m; j++)
+      {
+          a[i][j] = sc.nextInt();
+          //System.out.print(a[i][j]);
+      }
+      //System.out.println();
+  }
+  int k,small=-1;
+int diff;
+  for ( i = 0; i<n-1; i++)
+  {
+      for(j = 0; j<m; j++)
+      {
+          for(k=0;k<m;k++)
+          {
+            if (small == -1)
+            {
+               
+                    small = a[i][j]-a[i+1][k];
+                    small = Math.abs(small);
+                    //  System.out.println(small);
+              
+            }
+            else
+            {
+               diff = a[i][j]-a[i+1][k];
+               diff = Math.abs(diff);
+               if (diff<small)
+               {
+                   small = diff;
+                    // System.out.println(small);
+               }
+            }
+          }
+      }
+  }
+  System.out.println(small);
+}}
