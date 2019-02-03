@@ -1,0 +1,53 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class test
+{
+    public static void main(String agrs[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int no_test = sc.nextInt();
+        int i, no_ele,j;
+        int[] a = new int[1000000];
+        int[] hash = new int[1000000];
+        int freq;
+        int found = 0;
+        int k;
+        for(i=0;i<no_test;i++)
+        {
+            no_ele = sc.nextInt();
+            for(j=0;j<no_ele;j++)
+            {
+                a[j] = sc.nextInt();
+               (hash[a[j]])++;
+            }
+            
+            for(j=0;j<no_ele; j++)
+            {
+              freq = hash[a[j]];
+              for ( k=j+1;k<no_ele;k++)
+              {
+                  if (freq < hash[a[k]])
+                  {
+                      found = 1;
+                      break;
+                  }
+              }
+                  if (found == 1)
+                  {
+                      System.out.print(a[k]);
+                      found = 0;
+                  }
+                  else
+                  {
+                      System.out.print("-1");
+                                        }
+                                         System.out.print(" ");
+             
+          
+            }
+                System.out.println();
+            Arrays.fill(a, 0);
+            Arrays.fill(hash, 0);
+        }
+    }
+}
